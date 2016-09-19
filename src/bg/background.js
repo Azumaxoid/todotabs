@@ -5,7 +5,6 @@ function urlContains(urlDataList, url) {
 function addUrl(data, src) {
   return data.find(function(urlData) {
     if (urlData.host === src.host) {
-      alert(urlContains(urlData.value, src.url));
       return !urlContains(urlData.value, src.url) && urlData.value.push(src);
     }
     return false;
@@ -32,9 +31,7 @@ chrome.browserAction.onClicked.addListener(function() {
           }
 　　　　　  　　　var host = tab.url.split('/')[2];
           var newUrl = { favIconUrl: tab.favIconUrl, title: tab.title, url: tab.url, host: host, date: date };
-          alert(JSON.stringify(storedData));
           !addUrl(storedData, newUrl) && storedData.push({key:host, host:host, value:[newUrl]});
-          alert(JSON.stringify(storedData));
           return tab.id;
       
         }).filter(function(data) { return data !== ''; });;
