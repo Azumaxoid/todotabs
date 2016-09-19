@@ -1,0 +1,6 @@
+chrome.tabs.getCurrent(function(tab) {
+  chrome.tabs.query({windowId: windowId},  function(res) {
+    document.getElementById('list').innerText = JSON.stringify(res);
+  });
+});
+

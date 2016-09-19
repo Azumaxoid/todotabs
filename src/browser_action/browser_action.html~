@@ -1,0 +1,8 @@
+<!doctype html>
+    <div id="list">
+    </div>
+<script>
+  alert("hoge");
+</script>
+    <script src="/js/get-tab-ids.js" />
+
